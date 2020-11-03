@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list');
+Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show');
+
 Route::get('/', function () {
     return view('welcome');
 });
