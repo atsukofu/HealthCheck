@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Condition extends Model
 {
     use HasFactory;
+
+    public function staff() {
+        return $this->belongsTo('App\Models\Category')
+    }
 }
