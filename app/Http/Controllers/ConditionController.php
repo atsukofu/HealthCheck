@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Condition;
-use Carbon\Cabonlmmutable;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -19,6 +18,11 @@ class ConditionController extends Controller
         }
         return view('condition.index', ['datas' => $datas, 'remove_times' => $remove_times]);
         
+    }
+
+    public function show($date){
+        $days = DB::table('conditions')->where('created_at', 'like', '%' . $date . '%')->get();
+        return view('condition.show', ['days' => $days, 'date' => $date]);
     }
 
     

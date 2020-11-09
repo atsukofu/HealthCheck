@@ -17,6 +17,7 @@ Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff
 Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show');
 
 Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.index');
+Route::get('/condition/{date}', 'App\Http\Controllers\ConditionController@show')->name('condition.show');
 
 Route::get('/', function () {
     return view('welcome');

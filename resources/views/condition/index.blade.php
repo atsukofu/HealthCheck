@@ -5,8 +5,7 @@
 
 <table>
   <tr><th>日付</th></tr>
- 
   @foreach ($remove_times as $date)
-  <tr><td>{{$date}}</td></tr>
+  <tr><td><a href="{{route('condition.show', ['date' => $date])}}">{{$date}}</a></td></tr>
   @endforeach
 </table>
