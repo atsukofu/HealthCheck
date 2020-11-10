@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('content')
+<h2>スタッフ一覧</h2>
+<p></p>
   <table class="table table-striped table-hover">
     <tr>
       <th>スタッフID</th><th>スタッフ名</th>
