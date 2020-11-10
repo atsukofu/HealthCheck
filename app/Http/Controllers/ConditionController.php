@@ -25,5 +25,9 @@ class ConditionController extends Controller
         return view('condition.show', ['days' => $days, 'date' => $date]);
     }
 
+    public function menu() {
+        return view('condition.menu');
+    }
+
     
 }
