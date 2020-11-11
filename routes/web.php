@@ -18,6 +18,8 @@ Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('st
 
 Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list');
 Route::get('/condition/menu', 'App\Http\Controllers\ConditionController@menu')->name('condition.menu');
+Route::get('/condition/new', 'App\Http\Controllers\ConditionController@new')->name('condition.new');
+Route::post('/condition/store', 'App\Http\Controllers\ConditionController@store')->name('condition.store');
 Route::get('/condition/{date}', 'App\Http\Controllers\ConditionController@show')->name('condition.show');
 
 Route::get('/', function () {
