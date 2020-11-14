@@ -7,13 +7,13 @@
   <tr>
     <div class="form-group">
       <th>{{ Form::label('user_id', '社員名:') }}</th>
-      <td>{{ Form::select('user_id', $staff) }}</td>
+      <td>{{ Form::select('user_id', $staff)}}</td>
     </div>
   </tr>
   <tr>
     <div class="form-group">
       <th>{{ Form::label('body_temperture', '体温:') }}</th>
-      <td>{{ Form::text('body_temperture', null) }}℃</td>
+      <td>{{ Form::text('body_temperture', null)}}℃</td>
     </div>
   </tr>
   <tr>
@@ -49,8 +49,45 @@
 </table>
 
 <script>
+  
+  
   function modal() {
-    if(!window.confirm('登録しますか？')){
+    var selectedStaff = document.getElementById("user_id");
+    var staffIdx = selectedStaff.selectedIndex;
+    var staffName = selectedStaff.options[staffIdx].text;
+
+    var staffTemperture = document.getElementById("body_temperture").value;
+
+    var staffNail = document.getElementsByName("nail");
+    if (staffNail[0].checked){
+      var staffNailLabel = "OK";
+    } else {
+      var staffNailLabel = "NG";
+    }
+    
+    var staffBelly = document.getElementsByName("belly");
+    if (staffBelly[0].checked){
+      var staffBellyLabel = "OK";
+    } else {
+      var staffBellyLabel = "NG";
+    }
+    
+    var staffRoughHands = document.getElementsByName("rough_hands");
+    if (staffRoughHands[0].checked){
+      staffRoughHandsLabel = "OK";
+    } else {
+      staffRoughHandsLabel = "NG";
+    }
+    
+    var staffOther = document.getElementsByName("other");
+    if (staffOther[0].checked){
+      staffOtherLabel = "OK";
+    } else {
+      staffOtherLabel = "NG";
+    }
+    
+
+    if(!window.confirm('名前：'+ staffName + '体温：' + staffTemperture + '爪'+ staffNailLabel + 'お腹' + staffBellyLabel + '手指' + staffRoughHandsLabel + 'その他' + staffOtherLabel + '登録しますか？')){
       window.alert('キャンセルしました');
       return false;
     }
