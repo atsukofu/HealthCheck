@@ -1,8 +1,7 @@
 @extends('layout')
 
 @section('content')
-<h2>日別データ一覧</h2>
-<p></p>
+<h2 style="margin-bottom: 50px";>日別データ一覧</h2>
 <table class="table table-striped table-hover">
   <tr><th>日付</th></tr>
   @foreach ($remove_times as $date)

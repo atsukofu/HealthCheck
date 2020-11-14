@@ -46,7 +46,7 @@ class ConditionController extends Controller
         $condition->rough_hands = request('rough_hands');
         $condition->other = request('other');
         $condition->save();
-        return redirect()->route('condition.new');
+        return redirect()->route('condition.new')->with('flash_message', '登録が完了しました');;
     }
 
     
