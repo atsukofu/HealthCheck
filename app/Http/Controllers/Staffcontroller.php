@@ -19,4 +19,8 @@ class Staffcontroller extends Controller
         ->get();
         return view('staff.show', ['staff' => $staff, 'items' => $items]);
     }
+
+    public function hoge() {
+        return view('staff.hoge');
+    }
 }

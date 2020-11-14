@@ -1,6 +1,12 @@
 @extends('layout')
 
 @section('content')
+@if (session('flash_message'))
+  <div class="flash_message alert-primary text-center py-3 my-0" id="flashMessage">
+      {{ session('flash_message') }}
+  </div>
+@endif
+
 <h2 style="margin-bottom: 50px";>データを入力してください</h2>
 <table class="table table-striped table-hover">
 {{ Form::open(['route' => 'condition.store', 'name' => 'form']) }}
@@ -44,53 +50,94 @@
       <lavel>NG{{ Form::radio('other', 2) }}</lavel></td>
     </div>
   </tr>
-  <tr><th></th><td>{{ Form::submit('登録する',['onClick' => 'modal()'])}}</td>
+  <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
   {{ Form::close() }}
 </table>
 
+<!-- モーダル -->
+<div class="modal fade" id="confirmModal" tabindex="1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4class="modal-title" id="myModalLabel">登録確認画面</h4></h4>
+      </div>
+      <div class="modal-body">
+        <label>以下の通り登録しますか？</label>
+        <p>名前：<span id="nameInsert"></span></p>
+        <p>体温：<span id="tempInsert"></span>℃</p>
+        <p>爪の長さ：<span id="nailInsert"></span></p>
+        <p>お腹の調子：<span id="bellyInsert"></span></p>
+        <p>手指の傷：<span id="roughHandsInsert"></span></p>
+        <p>その他健康状態：<span id="otherInsert"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="submit">登録</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>        
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 <script>
-  
-  
-  function modal() {
-    var selectedStaff = document.getElementById("user_id");
-    var staffIdx = selectedStaff.selectedIndex;
-    var staffName = selectedStaff.options[staffIdx].text;
+  $('#flashMessage').fadeOut(3000);
 
-    var staffTemperture = document.getElementById("body_temperture").value;
+  $(function() {
+    $('#submit-btn').on('click', function(e){
+      e.preventDefault();
 
-    var staffNail = document.getElementsByName("nail");
-    if (staffNail[0].checked){
-      var staffNailLabel = "OK";
-    } else {
-      var staffNailLabel = "NG";
-    }
-    
-    var staffBelly = document.getElementsByName("belly");
-    if (staffBelly[0].checked){
-      var staffBellyLabel = "OK";
-    } else {
-      var staffBellyLabel = "NG";
-    }
-    
-    var staffRoughHands = document.getElementsByName("rough_hands");
-    if (staffRoughHands[0].checked){
-      staffRoughHandsLabel = "OK";
-    } else {
-      staffRoughHandsLabel = "NG";
-    }
-    
-    var staffOther = document.getElementsByName("other");
-    if (staffOther[0].checked){
-      staffOtherLabel = "OK";
-    } else {
-      staffOtherLabel = "NG";
-    }
-    
+      var selectedStaff = $("#user_id option:selected").text();
+      var nameInsert = $('#nameInsert');
+      nameInsert.text(selectedStaff);
 
-    if(!window.confirm('名前：'+ staffName + '体温：' + staffTemperture + '爪'+ staffNailLabel + 'お腹' + staffBellyLabel + '手指' + staffRoughHandsLabel + 'その他' + staffOtherLabel + '登録しますか？')){
-      window.alert('キャンセルしました');
-      return false;
-    }
-    document.form.submit();
-  }
+      var inputtemp = $('#body_temperture').val();
+      var tempInsert = $('#tempInsert');
+      tempInsert.text(inputtemp);
+
+      var selectedNail = $('#nail');
+      var nailInsert = $('#nailInsert');
+      if (selectedNail[0].checked){
+        nailInsert.text('OK');
+      } else {
+        nailInsert.text('NG');
+      }
+
+      var selectedBelly = $('#belly');
+      var bellyInsert = $('#bellyInsert');
+      if (selectedBelly[0].checked){
+        bellyInsert.text('OK');
+      } else {
+        bellyInsert.text('NG');
+      }
+
+      var selectedRoughHands = $('#rough_hands');
+      var roughHandsInsert = $('#roughHandsInsert');
+      if (selectedRoughHands[0].checked){
+        roughHandsInsert.text('OK');
+      } else {
+        roughHandsInsert.text('NG');
+      }
+
+      var selectedOther = $('#other');
+      var otherInsert = $('#otherInsert');
+      if (selectedOther[0].checked){
+        otherInsert.text('OK');
+      } else {
+        otherInsert.text('NG');
+      }
+
+      $('#confirmModal').modal();
+
+      $('#submit').on('click', function(){
+        document.form.submit();
+      });
+    });
+
+    
+    
+  });
 </script>

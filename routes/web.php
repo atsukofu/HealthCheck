@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list');
+Route::get('/staff/hoge', 'App\Http\Controllers\StaffController@hoge')->name('staff.hoge');
 Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show');
 
 Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list');
