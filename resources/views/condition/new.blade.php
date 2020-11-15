@@ -135,9 +135,6 @@
       $('#submit').on('click', function(){
         document.form.submit();
       });
-    });
-
-    
-    
+    });  
   });
 </script>

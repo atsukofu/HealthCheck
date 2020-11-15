@@ -9,7 +9,8 @@
 </head>
 <body>
   <nav class='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
-    <a class='navbar-brand' href="{{route('staff.list')}}">HealthCheck</a>
+    <a class='navbar-brand' href="{{route('condition.new')}}">HealthCheck</a>
+    <a class='navbar-brand' href="{{route('condition.menu')}}" style="margin-left:30px;">menu</a>
   </nav>
   <div class='container'>
     @yield('content')
