@@ -63,12 +63,14 @@
       </div>
       <div class="modal-body">
         <label>以下の通り登録しますか？</label>
-        <p>名前：<span id="nameInsert"></span></p>
-        <p>体温：<span id="tempInsert"></span>℃</p>
-        <p>爪の長さ：<span id="nailInsert"></span></p>
-        <p>お腹の調子：<span id="bellyInsert"></span></p>
-        <p>手指の傷：<span id="roughHandsInsert"></span></p>
-        <p>その他健康状態：<span id="otherInsert"></span></p>
+        <table class="table table-striped">
+          <tr><th>名前：</th><td id="nameInsert"></td></tr>
+          <tr><th>体温：</th><td id="tempInsert">℃</td></tr>
+          <tr><th>爪の長さ：</th><td id="nailInsert"></td></tr>
+          <tr><th>お腹の調子：</th><td id="bellyInsert"></td></tr>
+          <tr><th>手指の傷：</th><td id="roughHandsInsert"></td></tr>
+          <tr><th>その他健康状態：</th><td id="otherInsert"></td></tr>
+        </table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" id="submit">登録</button>
@@ -78,8 +80,7 @@
     </div>
   </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>        
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
@@ -96,7 +97,7 @@
 
       var inputtemp = $('#body_temperture').val();
       var tempInsert = $('#tempInsert');
-      tempInsert.text(inputtemp);
+      tempInsert.text(inputtemp + "℃");
 
       var selectedNail = $('#nail');
       var nailInsert = $('#nailInsert');
