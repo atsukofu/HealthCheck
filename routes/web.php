@@ -14,15 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list');
-Route::get('/staff/hoge', 'App\Http\Controllers\StaffController@hoge')->name('staff.hoge');
 Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show');
 
 Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list');
 Route::get('/condition/menu', 'App\Http\Controllers\ConditionController@menu')->name('condition.menu');
-Route::get('/condition/new', 'App\Http\Controllers\ConditionController@new')->name('condition.new');
+Route::get('/', 'App\Http\Controllers\ConditionController@new')->name('condition.new');
 Route::post('/condition/store', 'App\Http\Controllers\ConditionController@store')->name('condition.store');
 Route::get('/condition/{date}', 'App\Http\Controllers\ConditionController@show')->name('condition.show');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });

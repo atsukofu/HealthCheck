@@ -23,7 +23,8 @@ class ConditionController extends Controller
     }
 
     public function show($date){
-        $days = DB::table('conditions')->where('created_at', 'like', '%' . $date . '%')->get();
+        $days = Condition::with('staff')->where('created_at', 'like', '%' . $date . '%')->get();
+        // $days = DB::table('conditions')->where('created_at', 'like', '%' . $date . '%')->get();
         return view('condition.show', ['days' => $days, 'date' => $date]);
     }
 

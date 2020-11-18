@@ -4,11 +4,11 @@
 <h2>{{ $date }}のデータ一覧</h2>
 <table class="table table-striped table-hover">
     <tr>
-      <th>社員ID</th><th>体温</th><th>爪の長さ</th><th>お腹の調子</th><th>手指の傷</th><th>その他体調不良</th>
+      <th>社員名</th><th>体温</th><th>爪の長さ</th><th>お腹の調子</th><th>手指の傷</th><th>その他体調不良</th>
     </tr>
     @foreach ($days as $item)
     <tr>
-      <td>{{ $item->user_id }}</td>
+      <td>{{ $item->staff->name }}</td>
       @if($item->body_temperture < 37.5)
         <td>{{ $item->body_temperture }}</td>
       @else

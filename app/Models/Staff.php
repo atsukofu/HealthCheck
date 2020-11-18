@@ -10,7 +10,7 @@ class Staff extends Model
     use HasFactory;
     protected $table = 'Staffs';
     public function condition() {
-        return $this->hasMany('App\Condition');
+        return $this->hasMany('App\Models\Conditions', 'user_id');
     }
 
 }

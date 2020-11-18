@@ -11,14 +11,7 @@ class Condition extends Model
     use HasFactory;
 
     public function staff() {
-        return $this->belongsTo('App\Staff');
+        return $this->belongsTo('App\Models\Staff', 'user_id');
     }
 
-    public function getData(){
-        return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->format('Y-m-d');
-        // $builder = Condition::select(['created_at'])->get()->toArray();
-        // return $builder;
-        // return $collection->unique();
-        // return $dates->unique($dates);
-    }
 }
