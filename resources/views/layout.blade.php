@@ -40,6 +40,9 @@
                       <a class="dropdown-item" href="{{route('condition.menu')}}">
                           {{ __('メニュー') }}
                       </a>
+                      <a class="dropdown-item" href="{{route('staff.new')}}">
+                          {{ __('社員を登録') }}
+                      </a>
                       <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
