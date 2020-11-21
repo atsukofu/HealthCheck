@@ -46,6 +46,4 @@
   </table>
 
 
-<script src="{{ asset('js/app.js') }}" defer>
-  $('#flashMessage').fadeOut(3000);
-</script>
+<script src="{{ asset('js/app.js') }}" defer></script>

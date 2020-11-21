@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list')->middleware('auth');
 Route::get('/staff/new', 'App\Http\Controllers\StaffController@new')->name('staff.new')->middleware('auth');
 Route::post('/staff/store', 'App\Http\Controllers\StaffController@store')->name('staff.store')->middleware('auth');
-Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list')->middleware('auth');
 Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show')->middleware('auth');
 
 Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list')->middleware('auth');
