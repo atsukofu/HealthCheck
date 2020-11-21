@@ -44,7 +44,7 @@
     </tr>
     @endforeach
   </table>
-@endsection
+
 
 <script src="{{ asset('js/app.js') }}" defer>
   $('#flashMessage').fadeOut(3000);

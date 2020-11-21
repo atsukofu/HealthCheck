@@ -14,6 +14,6 @@
       </tr>
     @endforeach
   </table>
-@endsection
+
 
 <script src="{{ asset('js/app.js') }}" defer></script>
