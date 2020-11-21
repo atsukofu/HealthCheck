@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Staff;
 use App\Models\Condition;
+
 use Illuminate\Http\Request;
 
-class StaffController extends Controller
+class staffController extends Controller
 {
     public function index() {
         $staffs = Staff::all();
@@ -31,5 +32,4 @@ class StaffController extends Controller
         $staff->save();
         return redirect()->route('staff.new')->with('flash_message', 'スタッフを登録しました!');
     }
-
 }
