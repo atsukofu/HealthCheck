@@ -8,3 +8,6 @@
   <tr><td><a href={{route('condition.show', ['date' => $date])}} style="color:#212529";>{{$date}}</a></td></tr>
   @endforeach
 </table>
+@endsectiom
+
+<script src="{{ asset('js/app.js') }}" defer></script>
