@@ -13,3 +13,6 @@
   </div>
   <div style="width: 200px;"></div>
 </div>
+@endsection
+
+<script src="{{ asset('js/app.js') }}" defer></script>
