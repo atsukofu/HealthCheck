@@ -13,16 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list');
+
 Route::get('/staff/new', 'App\Http\Controllers\StaffController@new')->name('staff.new');
 Route::post('/staff/store', 'App\Http\Controllers\StaffController@store')->name('staff.store');
-Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show');
+Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list')->middleware('auth');
+Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show')->middleware('auth');
 
-Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list');
-Route::get('/condition/menu', 'App\Http\Controllers\ConditionController@menu')->name('condition.menu');
+Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list')->middleware('auth');
+Route::get('/condition/menu', 'App\Http\Controllers\ConditionController@menu')->name('condition.menu')->middleware('auth');
 Route::get('/', 'App\Http\Controllers\ConditionController@new')->name('condition.new')->middleware('auth');
-Route::post('/condition/store', 'App\Http\Controllers\ConditionController@store')->name('condition.store');
-Route::get('/condition/{date}', 'App\Http\Controllers\ConditionController@show')->name('condition.show');
+Route::post('/condition/store', 'App\Http\Controllers\ConditionController@store')->name('condition.store')->middleware('auth');
+Route::get('/condition/{date}', 'App\Http\Controllers\ConditionController@show')->name('condition.show')->middleware('auth');
 
 // Route::get('/', function () {
 //     return view('welcome');
