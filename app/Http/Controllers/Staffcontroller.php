@@ -29,7 +29,7 @@ class StaffController extends Controller
         $staff = new Staff;
         $staff->name = request('user_name');
         $staff->save();
-        return redirect()->route('staff.new')->with('flash_message', 'スタッフを登録しました');
+        return redirect()->route('staff.new')->with('flash_message', 'スタッフを登録しました!');
     }
 
 }
