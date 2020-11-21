@@ -5,7 +5,7 @@ use App\Models\Staff;
 use App\Models\Condition;
 use Illuminate\Http\Request;
 
-class Staffcontroller extends Controller
+class StaffController extends Controller
 {
     public function index() {
         $staffs = Staff::all();
