@@ -20,4 +20,16 @@ class Staffcontroller extends Controller
         return view('staff.show', ['staff' => $staff, 'items' => $items]);
     }
 
+    public function new() {
+        $staff = new Staff;
+        return view('staff.new', ['staff' => $staff]);
+    }
+
+    public function store(Request $request) {
+        $staff = new Staff;
+        $staff->name = request('user_name');
+        $staff->save();
+        return redirect()->route('staff.new')->with('flash_message', 'スタッフを登録しました');
+    }
+
 }

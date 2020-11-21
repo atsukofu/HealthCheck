@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/staffs', 'App\Http\Controllers\StaffController@index')->name('staff.list');
+Route::get('/staff/new', 'App\Http\Controllers\StaffController@new')->name('staff.new');
+Route::post('/staff/store', 'App\Http\Controllers\StaffController@store')->name('staff.store');
 Route::get('/staff/{id}', 'App\Http\Controllers\StaffController@show')->name('staff.show');
 
 Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->name('condition.list');
