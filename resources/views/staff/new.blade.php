@@ -16,7 +16,7 @@
       <td>{{ Form::text('user_name', null)}}</td>
     </div>
   </tr>
-  <tr><th></th><td>{{ Form::submit('登録する') }}</td></tr>
+  <tr><th></th><td>{{ Form::submit('登録する', ['class' => "btn btn-primary"])}}</td></tr>
 {{ Form::close() }}
 </table>
 
