@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\Condition;
 use App\Models\Staff;
-use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -24,7 +23,6 @@ class ConditionController extends Controller
 
     public function show($date){
         $days = Condition::with('staff')->where('created_at', 'like', '%' . $date . '%')->get();
-        // $days = DB::table('conditions')->where('created_at', 'like', '%' . $date . '%')->get();
         return view('condition.show', ['days' => $days, 'date' => $date]);
     }
 

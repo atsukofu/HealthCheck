@@ -16,7 +16,7 @@ class CreateConditionsTable extends Migration
         Schema::create('conditions', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->integer('body_temperture');
+            $table->double('body_temperture',4,1);
             $table->integer('nail');
             $table->integer('belly');
             $table->integer('rough_hands');

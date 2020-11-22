@@ -9,7 +9,7 @@
     </tr>
     @foreach ($items as $item)
     <tr>
-      <td>{{ $item->created_at }}</td>
+      <td>{{ $item->created_at->format('Y年m月d日') }}</td>
 
       @if($item->body_temperture < 37.5)
       <td>{{ $item->body_temperture }}</td>
