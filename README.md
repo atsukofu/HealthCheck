@@ -1,61 +1,46 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# README
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Health Check
+<img width="1440" alt="スクリーンショット 2020-11-23 10 47 40" src="https://user-images.githubusercontent.com/62829792/99923841-f1beb780-2d7a-11eb-9e2c-a6eae3c18341.png">
 
-## About Laravel
+このサイトは食品工場における従業員の毎日の健康チェックと記録用に作成しました。<br>
+毎日のチェックが煩雑に感じないよう簡単に登録でき、保存データは日別・従業員別に見ることができます。<br>
+条件に逸脱した場合（体温37.5℃以上、各チェック項目において×がついた場合）は、項目が赤色になり一目でわかるようにしています。<br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Description
+<img width="770" alt="スクリーンショット 2020-11-23 10 58 34" src="https://user-images.githubusercontent.com/62829792/99923860-03a05a80-2d7b-11eb-8773-a47872ca6fd9.png">
+<img width="774" alt="スクリーンショット 2020-11-23 10 58 50" src="https://user-images.githubusercontent.com/62829792/99923876-19158480-2d7b-11eb-9602-d323ebecb31b.png">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+条件に逸脱した場合（体温37.5℃以上、各チェック項目において×がついた場合）は、<br>
+項目が赤色になり一目でわかるようにしています。<br>
+新型コロナウイルスの影響で企業内での従業員健康チェックが厳しくなる中、<br>
+発熱者などを記録・管理しやすいようにすることを意識しました。<br>
+また、新しい社員の登録も簡単に行うことができます。<br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Usage
+$ git clone https://github.com/atsukofu/HealthCheck.git<br>
+上記コマンドでダウンロードし、ローカルサーバーで起動してください。
 
-## Learning Laravel
+Web上でアクセスされる場合は下記URLにアクセスしてください。<br>
+アカウントを作成していただくと、アプリを使うことができます。<br>
+👉 https://healthcondition.herokuapp.com/
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Test account
+スタッフ名：abc@gmail.com<br>
+パスワード：abcabc01<br>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Commitment
+このサイトを作る上でのこだわりは、ただ登録するだけでなく、管理もしやすくすることを目指しました。<br>
+現在食品工場で働いている経験から、紙で管理されたデータの管理の大変さを痛感しています。<br>
+多くの従業員の健康管理を毎日行う管理者が、容易に欲しいデータを閲覧できるようにするため、<br>
+日別・従業員別両面からデータを取得できる設計にしています。<br>
 
-## Laravel Sponsors
+## Technology Used
+- laravel
+- JavaScript
+- My SQL
+- bootstrap
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Future Plans
+- 従業員別・日別データを検索できる機能を追加したいと思っています。
+  管理者がより簡単にデータの検索・閲覧を行えるアプリにしたいと考えています。
