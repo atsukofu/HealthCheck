@@ -30,7 +30,7 @@ Web上でアクセスされる場合は下記URLにアクセスしてくださ�
 👉 https://healthcondition.herokuapp.com/
 
 ## Test account
-スタッフ名：abc@gmail.com<br>
+メールアドレス：abc@gmail.com<br>
 パスワード：abcabc01<br>
 
 ## Commitment
