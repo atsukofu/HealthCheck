@@ -23,6 +23,7 @@ Route::get('/conditions', 'App\Http\Controllers\ConditionController@index')->nam
 Route::get('/condition/menu', 'App\Http\Controllers\ConditionController@menu')->name('condition.menu')->middleware('auth');
 Route::get('/', 'App\Http\Controllers\ConditionController@new')->name('condition.new')->middleware('auth');
 Route::post('/condition/store', 'App\Http\Controllers\ConditionController@store')->name('condition.store')->middleware('auth');
+Route::post('/condition/month', 'App\Http\Controllers\ConditionController@month')->name('condition.month')->middleware('auth');
 Route::get('/condition/{date}', 'App\Http\Controllers\ConditionController@show')->name('condition.show')->middleware('auth');
 
 // Route::get('/', function () {

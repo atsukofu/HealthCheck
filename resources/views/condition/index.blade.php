@@ -2,6 +2,11 @@
 
 @section('content')
 <h2 style="margin-bottom: 50px";>日別データ一覧</h2>
+<p>月で検索する</p>
+  <form action="{{url('/month')}}">
+    <input type="month">
+    <input type="submit" value="検索">
+  </form>
 <table class="table table-striped table-hover">
   <tr><th>日付</th></tr>
   @foreach ($remove_times as $date)

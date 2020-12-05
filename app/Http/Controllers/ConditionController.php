@@ -48,5 +48,9 @@ class ConditionController extends Controller
         return redirect()->route('condition.new')->with('flash_message', '登録が完了しました');
     }
 
+    public function month(Request $request) {
+        $month_datas = Condition::whereDay('created_at', $request)->get();
+        return redirect()->route('condition.month', ['month_datas' => $month_datas]);
+    }
     
 }
