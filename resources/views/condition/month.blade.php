@@ -5,9 +5,13 @@
 <div style="width: 100%;display:flex;">
   <div style="width:80px"></div>
   <div>
-    @foreach ($month_datas as data)
-      {{ data->created_at}}
-    @endforeach
+    @if(isset($month_datas) && count($month_datas) > 0)
+      @foreach ($month_datas as $data)
+        {{ $data->created_at}}
+      @endforeach
+    @else
+      <p>該当する月のデータは登録されていません</p>
+    @endif
   </div>
 </div>
 @endsection

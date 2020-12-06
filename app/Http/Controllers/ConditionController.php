@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Condition;
 use App\Models\Staff;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ConditionController extends Controller
@@ -48,9 +48,15 @@ class ConditionController extends Controller
         return redirect()->route('condition.new')->with('flash_message', '登録が完了しました');
     }
 
+    public function search(Request $request) {
+        $year = $request->year;
+        $month = $request->month;
+        $month_datas = DB::table('conditions')->whereYear('created_at', $year)->whereMonth('created_at', $month)->get();
+        return view('condition.month', ['month_datas' => $month_datas]);
+    }
+
     public function month(Request $request) {
-        $month_datas = Condition::whereDay('created_at', $request)->get();
-        return redirect()->route('condition.month', ['month_datas' => $month_datas]);
+        return view('condition.month');
     }
     
 }
