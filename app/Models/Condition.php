@@ -14,4 +14,8 @@ class Condition extends Model
         return $this->belongsTo('App\Models\Staff', 'user_id');
     }
 
+    protected $dates = [
+        'created_at'
+    ];
+
 }

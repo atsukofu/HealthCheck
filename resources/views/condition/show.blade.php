@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-<h2>{{ $date }}のデータ一覧</h2>
+<h2>{{ $ja_date }}のデータ一覧</h2>
 <table class="table table-striped table-hover">
     <tr>
       <th>社員名</th><th>体温</th><th>爪の長さ</th><th>お腹の調子</th><th>手指の傷</th><th>その他体調不良</th>
