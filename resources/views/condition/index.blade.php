@@ -19,8 +19,8 @@
   </form>
 <table class="table table-striped table-hover">
   <tr><th>日付</th></tr>
-  @foreach ($remove_times as $date)
-  <tr><td><a href={{route('condition.show', ['date' => $date])}} style="color:#212529";>{{$date}}</a></td></tr>
+  @foreach ($remove_times as $key=>$val)
+  <tr><td><a href={{route('condition.show', ['date' => $val])}} style="color:#212529";>{{$key}}</a></td></tr>
   @endforeach
 </table>
 @endsection

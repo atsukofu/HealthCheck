@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Condition;
 use App\Models\Staff;
+use CreateConditionsTable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,14 @@ class ConditionController extends Controller
 {
     public function index() {
         $datas = Condition::all()->pluck('created_at');   
-        $remove_times = [];
+        // $remove_times = [];
         foreach($datas as $data){
-            $data = $data->format('Y-m-d');  
-            array_push($remove_times, $data);
+            $ja_data = $data->format('Y年m月d日');
+            $hifun_data = $data->format('Y-m-d');
+            $remove_times[$ja_data] = $hifun_data;
+            // array_push($remove_times, $ja_data);
             $remove_times = array_unique($remove_times);
-            $remove_times = array_values($remove_times);
+            // $remove_times = array_values($remove_times);
         }
         return view('condition.index', ['datas' => $datas, 'remove_times' => $remove_times]);
         
@@ -23,7 +26,10 @@ class ConditionController extends Controller
 
     public function show($date){
         $days = Condition::with('staff')->where('created_at', 'like', '%' . $date . '%')->get();
-        return view('condition.show', ['days' => $days, 'date' => $date]);
+        $days_array = $days->pluck('created_at');
+        $ja_date = $days_array[0]->format('Y年m月d日');
+
+        return view('condition.show', ['days' => $days, 'date' => $date, 'ja_date' => $ja_date]);
     }
 
     public function menu() {
@@ -51,7 +57,7 @@ class ConditionController extends Controller
     public function search(Request $request) {
         $year = $request->year;
         $month = $request->month;
-        $month_datas = DB::table('conditions')->whereYear('created_at', $year)->whereMonth('created_at', $month)->get();
+        $month_datas = Condition::with('staff')->whereYear('created_at', $year)->whereMonth('created_at', $month)->get();
         return view('condition.month', ['month_datas' => $month_datas]);
     }
 
