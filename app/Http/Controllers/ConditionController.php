@@ -11,17 +11,13 @@ class ConditionController extends Controller
 {
     public function index() {
         $datas = Condition::all()->pluck('created_at');   
-        // $remove_times = [];
         foreach($datas as $data){
             $ja_data = $data->format('Y年m月d日');
             $hifun_data = $data->format('Y-m-d');
             $remove_times[$ja_data] = $hifun_data;
-            // array_push($remove_times, $ja_data);
             $remove_times = array_unique($remove_times);
-            // $remove_times = array_values($remove_times);
         }
         return view('condition.index', ['datas' => $datas, 'remove_times' => $remove_times]);
-        
     }
 
     public function show($date){
