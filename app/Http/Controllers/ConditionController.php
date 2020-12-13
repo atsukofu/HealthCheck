@@ -41,7 +41,8 @@ class ConditionController extends Controller
     public function store(Request $request) {
         $condition = new Condition;
         $condition->user_id = request('user_id');
-        $condition->body_temperture = request('body_temperture');
+        $inputtemp = request('body_temperture_int') + request('body_temperture_dec')/10;
+        $condition->body_temperture = $inputtemp;
         $condition->nail = request('nail');
         $condition->belly = request('belly');
         $condition->rough_hands = request('rough_hands');
