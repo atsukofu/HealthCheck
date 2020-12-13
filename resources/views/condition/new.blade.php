@@ -19,7 +19,8 @@
   <tr>
     <div class="form-group">
       <th>{{ Form::label('body_temperture', '体温:') }}</th>
-      <td>{{ Form::text('body_temperture', null)}}℃</td>
+      <td>{{ Form::selectRange('body_temperture_int', 34, 42, 36, ['id' => 'body_temperture_int'])}}.
+          {{ Form::selectRange('body_temperture_dec', 0, 9, 5, ['id' => 'body_temperture_dec'])}}℃</td>
     </div>
   </tr>
   <tr>
@@ -104,7 +105,10 @@
     $('#submit-btn').on('click', function(e){
       e.preventDefault();
       
-      var inputtemp = $('#body_temperture').val();
+      var inputtemp_int = $('#body_temperture_int').val();
+      var inputtemp_dec = $('#body_temperture_dec').val();
+      var inputtemp = inputtemp_int + "." + inputtemp_dec;
+      
 
       if(inputtemp == ""){
         $('#errorModal').modal();
