@@ -19,7 +19,13 @@
         {{Form::text('body_temperture_dec', 0, ['id' => 'body_temperture_dec'])}}</td>
     </div>
   </tr>
-  
+  <tr>
+    <div class="form-group">
+      <th>{{ Form::label('other', 'その他健康状態:') }}</th>
+      <td><lavel>OK{{ Form::radio('other', 1, true) }}&emsp;</lavel>
+      <lavel>NG{{ Form::radio('other', 2) }}</lavel></td>
+    </div>
+  </tr>
   <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
   {{ Form::close() }}
 </table>
