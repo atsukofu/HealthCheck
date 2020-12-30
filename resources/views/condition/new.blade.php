@@ -21,9 +21,30 @@
   </tr>
   <tr>
     <div class="form-group">
-      <th><label>その他</label></th>
-      <td><lavel>OK<input type="radio" name="other" value=1></input></lavel>
-      <lavel>NG<input type="radio" name="other" value=1></input></lavel></td>
+      <th>{{ Form::label('nail', '爪の長さ:') }}</th>
+      <td><lavel>OK<input type="radio" name="nail" value=1 id="nail" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="nail" value=2 id="nail"></lavel></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">
+      <th>{{ Form::label('belly', 'お腹の調子:') }}</th>
+      <td><lavel>OK<input type="radio" name="belly" value=1 id="belly" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="belly" value=2 id="belly"></lavel></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">
+      <th>{{ Form::label('rough_hands', '手指の傷:') }}</th>
+      <td><lavel>OK<input type="radio" name="rough_hands" value=1 id="rough_hands" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="rough_hands" value=2 id="rough_hands"></lavel></td>
+    </div>
+  </tr>
+  <tr>
+    <div class="form-group">
+      <th>{{ Form::label('other', 'その他健康状態:') }}</th>
+      <td><lavel>OK<input type="radio" name="other" value=1 id="other" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="other" value=2 id="other"></lavel></td>
     </div>
   </tr>
   <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
