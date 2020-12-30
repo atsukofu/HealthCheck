@@ -1,105 +1,13 @@
 @extends('layout')
 
 @section('content')
-@if (session('flash_message'))
-  <div class="flash_message alert-primary text-center py-3 my-0" id="flashMessage">
-      {{ session('flash_message') }}
-  </div>
-@endif
 
-<h2 style="margin-bottom: 50px";>データを入力してください</h2>
-<!-- <table class="table table-striped table-hover">
-{{ Form::open(['route' => 'condition.store', 'name' => 'form']) }}
-  <tr>
-    <div class="form-group">
-      <th>{{ Form::label('user_id', '社員名:') }}</th>
-      <td>{{ Form::select('user_id', $staff)}}</td>
-    </div>
-  </tr>
-  <tr>
-    <div class="form-group">
-      <th>{{ Form::label('body_temperture', '体温:') }}</th>
-      <td>
-        {{ Form::text('body_temperture_int', 36, ['id' => 'body_temperture_int'])}}.
-        {{Form::text('body_temperture_dec', 0, ['id' => 'body_temperture_dec'])}}</td>
-    </div>
-  </tr>
-  <tr>
-    <div class="form-group">
-      <th>{{ Form::label('nail', '爪の長さ:') }}</th>
-      <td><lavel>OK{{ Form::radio('nail', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('nail', 2) }}</lavel></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="form-group">
-      <th>{{ Form::label('belly', 'お腹の調子:') }}</th>
-      <td><lavel>OK{{ Form::radio('belly', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('belly', 2) }}</lavel></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="form-group">
-      <th>{{ Form::label('rough_hands', '手指の傷:') }}</th>
-      <td><lavel>OK{{ Form::radio('rough_hands', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('rough_hands', 2) }}</lavel></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="form-group">
-      <th>{{ Form::label('other', 'その他健康状態:') }}</th>
-      <td><lavel>OK{{ Form::radio('other', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('other', 2) }}</lavel></td>
-    </div>
-  </tr>
-  <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
-  {{ Form::close() }}
-</table> -->
-
-<!-- モーダル -->
-<!-- <div class="modal fade" id="confirmModal" tabindex="1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h4class="modal-title" id="myModalLabel">登録確認画面</h4>
-      </div>
-      <div class="modal-body">
-        <label>以下の通り登録しますか？</label>
-        <table class="table table-striped">
-          <tr><th>名前：</th><td id="nameInsert"></td></tr>
-          <tr><th>体温：</th><td id="tempInsert">℃</td></tr>
-          <tr><th>爪の長さ：</th><td id="nailInsert"></td></tr>
-          <tr><th>お腹の調子：</th><td id="bellyInsert"></td></tr>
-          <tr><th>手指の傷：</th><td id="roughHandsInsert"></td></tr>
-          <tr><th>その他健康状態：</th><td id="otherInsert"></td></tr>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="submit">登録</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
-      </div>
-    </div>
-    </div>
-</div>
-
-<div class="modal fade" id="errorModal" tabindex="1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-          <h4class="modal-title" id="myModalLabel">体温を入力してください</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
-      </div>
-    </div>
-    </div>
-</div> -->
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<!-- <script>
+<script>
   $('#flashMessage').fadeOut(3000);
 
   $(function() {
@@ -162,4 +70,4 @@
       });
     });  
   });
-</script> -->
+</script>
