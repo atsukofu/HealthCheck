@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+@if (session('flash_message'))
+  <div class="flash_message alert-primary text-center py-3 my-0" id="flashMessage">
+      {{ session('flash_message') }}
+  </div>
+@endif
 
 <h2 style="margin-bottom: 50px";>データを入力してください</h2>
 <table class="table table-striped table-hover">
