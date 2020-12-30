@@ -21,9 +21,9 @@
   </tr>
   <tr>
     <div class="form-group">
-      <th>{{ Form::label('other', 'その他健康状態:') }}</th>
-      <td><lavel>OK{{ Form::radio('other', '1', true) }}</lavel>
-      <lavel>NG{{ Form::radio('other', '2', false) }}</lavel></td>
+      <th><label>その他</label></th>
+      <td><lavel>OK<input type="radio" name="other" value=1></input></lavel>
+      <lavel>NG<input type="radio" name="other" value=1></input></lavel></td>
     </div>
   </tr>
   <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
