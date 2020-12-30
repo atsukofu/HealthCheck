@@ -19,7 +19,9 @@
   <tr>
     <div class="form-group">
       <th>{{ Form::label('body_temperture', '体温:') }}</th>
-      <td>{{ Form::text('body_temperture_int', null)}}.{{Form::text('body_temperture_dec', null)}}</td>
+      <td>
+        {{ Form::text('body_temperture_int', null, ['id' => 'body_temperture_int'])}}.
+        {{Form::text('body_temperture_dec', null, ['id' => 'body_temperture_dec'])}}</td>
     </div>
   </tr>
   <tr>
@@ -109,7 +111,7 @@
       var inputtemp = inputtemp_int + "." + inputtemp_dec;
       
 
-      if(inputtemp == ""){
+      if(inputtemp == "."){
         $('#errorModal').modal();
       } else {
 
