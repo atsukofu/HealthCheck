@@ -33,10 +33,14 @@ class ConditionController extends Controller
     }
 
     public function new() {
-        $condition = new Condition;
-        $staff = Staff::all()->pluck('name', 'id');
-        return view('condition.new', ['condition' => $condition, 'staff' => $staff]);
+        return view('condition.new');
     }
+
+    // public function new() {
+    //     $condition = new Condition;
+    //     $staff = Staff::all()->pluck('name', 'id');
+    //     return view('condition.new', ['condition' => $condition, 'staff' => $staff]);
+    // }
 
     public function store(Request $request) {
         $condition = new Condition;
