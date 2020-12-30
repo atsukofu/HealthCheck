@@ -19,36 +19,37 @@
   <tr>
     <div class="form-group">
       <th>{{ Form::label('body_temperture', '体温:') }}</th>
-      <td>{{ Form::selectRange('body_temperture_int', 34, 42, 36, ['id' => 'body_temperture_int'])}}.
-          {{ Form::selectRange('body_temperture_dec', 0, 9, 5, ['id' => 'body_temperture_dec'])}}℃</td>
+      <td>
+        {{ Form::selectRange('body_temperture_int', 34, 42, 36, ['id' => 'body_temperture_int'])}}.
+        {{Form::selectRange('body_temperture_dec', 0, 9, 5, ['id' => 'body_temperture_dec'])}}</td>
     </div>
   </tr>
   <tr>
     <div class="form-group">
       <th>{{ Form::label('nail', '爪の長さ:') }}</th>
-      <td><lavel>OK{{ Form::radio('nail', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('nail', 2) }}</lavel></td>
+      <td><lavel>OK<input type="radio" name="nail" value=1 id="nail" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="nail" value=2 id="nail"></lavel></td>
     </div>
   </tr>
   <tr>
     <div class="form-group">
       <th>{{ Form::label('belly', 'お腹の調子:') }}</th>
-      <td><lavel>OK{{ Form::radio('belly', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('belly', 2) }}</lavel></td>
+      <td><lavel>OK<input type="radio" name="belly" value=1 id="belly" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="belly" value=2 id="belly"></lavel></td>
     </div>
   </tr>
   <tr>
     <div class="form-group">
       <th>{{ Form::label('rough_hands', '手指の傷:') }}</th>
-      <td><lavel>OK{{ Form::radio('rough_hands', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('rough_hands', 2) }}</lavel></td>
+      <td><lavel>OK<input type="radio" name="rough_hands" value=1 id="rough_hands" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="rough_hands" value=2 id="rough_hands"></lavel></td>
     </div>
   </tr>
   <tr>
     <div class="form-group">
       <th>{{ Form::label('other', 'その他健康状態:') }}</th>
-      <td><lavel>OK{{ Form::radio('other', 1, true) }}&emsp;</lavel>
-      <lavel>NG{{ Form::radio('other', 2) }}</lavel></td>
+      <td><lavel>OK<input type="radio" name="other" value=1 id="other" checked="checked"></input>&emsp;</lavel>
+      <lavel>NG<input type="radio" name="other" value=2 id="other"></lavel></td>
     </div>
   </tr>
   <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
@@ -110,7 +111,7 @@
       var inputtemp = inputtemp_int + "." + inputtemp_dec;
       
 
-      if(inputtemp == ""){
+      if(inputtemp == "."){
         $('#errorModal').modal();
       } else {
 
