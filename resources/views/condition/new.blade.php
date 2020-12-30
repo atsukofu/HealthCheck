@@ -13,15 +13,15 @@
   <tr>
     <div class="form-group">
       <th>{{ Form::label('user_id', '社員名:') }}</th>
-      <td>{{ Form::select('user_id', $staff)}}</td>
+      <!-- <td>{{ Form::select('user_id', $staff)}}</td> -->
     </div>
   </tr>
   <tr>
     <div class="form-group">
       <th>{{ Form::label('body_temperture', '体温:') }}</th>
       <td>
-        {{ Form::text('body_temperture_int', null, ['id' => 'body_temperture_int'])}}.
-        {{Form::text('body_temperture_dec', null, ['id' => 'body_temperture_dec'])}}</td>
+        {{ Form::text('body_temperture_int', 36, ['id' => 'body_temperture_int'])}}.
+        {{Form::text('body_temperture_dec', 0, ['id' => 'body_temperture_dec'])}}</td>
     </div>
   </tr>
   <tr>
