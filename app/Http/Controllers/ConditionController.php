@@ -32,10 +32,6 @@ class ConditionController extends Controller
         return view('condition.menu');
     }
 
-    // public function new() {
-    //     return view('condition.new');
-    // }
-
     public function new() {
         $condition = new Condition;
         $staff = Staff::all()->pluck('name', 'id');
