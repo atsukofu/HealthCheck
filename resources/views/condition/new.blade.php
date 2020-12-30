@@ -15,8 +15,8 @@
     <div class="form-group">
       <th>{{ Form::label('body_temperture', '体温:') }}</th>
       <td>
-        {{ Form::text('body_temperture_int', 36, ['id' => 'body_temperture_int'])}}.
-        {{Form::text('body_temperture_dec', 0, ['id' => 'body_temperture_dec'])}}</td>
+        {{ Form::selectRange('body_temperture_int', 34, 42, 36, ['id' => 'body_temperture_int'])}}.
+        {{Form::selectRange('body_temperture_dec', 0, 9, 5, ['id' => 'body_temperture_dec'])}}</td>
     </div>
   </tr>
   <tr>
