@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@if (session('flash_message'))
+<!-- @if (session('flash_message'))
   <div class="flash_message alert-primary text-center py-3 my-0" id="flashMessage">
       {{ session('flash_message') }}
   </div>
@@ -13,7 +13,7 @@
   <tr>
     <div class="form-group">
       <th>{{ Form::label('user_id', '社員名:') }}</th>
-      <!-- <td>{{ Form::select('user_id', $staff)}}</td> -->
+      <td>{{ Form::select('user_id', $staff)}}</td>
     </div>
   </tr>
   <tr>
@@ -54,7 +54,7 @@
   </tr>
   <tr><th></th><td>{{ Form::submit('登録する',['class' => "btn btn-primary", 'id' => 'submit-btn', 'data-toggle' => 'modal','data-target' => '#testModal'])}}</td>
   {{ Form::close() }}
-</table>
+</table> -->
 
 <!-- モーダル -->
 <div class="modal fade" id="confirmModal" tabindex="1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
